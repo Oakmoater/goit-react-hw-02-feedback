@@ -1,16 +1,12 @@
-import { Component } from "react";
-
-class FeedbackOptions extends Component {
-    render() {
-        return(
-        <div>
-            <h1>Please leave feedback</h1>
-            <button>Good</button>
-            <button>Neutral</button>
-            <button>Bad</button>
-        </div>
-        )
-    };
+const FeedbackOptions = ({feedbackHandler}) => {
+    return (
+    <div>
+        <h1>Please leave feedback</h1>
+        <button type="button" name="good" onClick={feedbackHandler}>Good</button>
+        <button type="button" name="neutral" onClick={feedbackHandler}>Neutral</button>
+        <button type="button" name="bad" onClick={feedbackHandler}>Bad</button>
+    </div>
+    )
 };
 
 export default FeedbackOptions;
