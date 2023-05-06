@@ -1,6 +1,5 @@
 import { Component } from "react";
-import FeedbackOptions from "./Feedback/Feedback";
-import Statistics from "./Statistics/Statistics";
+import Section from "./Section/Section"
 
 export class App extends Component {
   state = {
@@ -9,9 +8,7 @@ export class App extends Component {
     bad: 0,
     total: 0,
     positive: 0
-
   }
-  bool = Boolean(this.state.good);
 
   handleClickIncrement = (e) => {
     const { name } = e.target;
@@ -20,8 +17,7 @@ export class App extends Component {
       updatedState.total += 1;
       return updatedState;
     }, this.countPositiveFeedbackPercentage);
-  }
-
+  };
 
   countPositiveFeedbackPercentage = () => {
     const { good, neutral, bad } = this.state;
@@ -32,14 +28,7 @@ export class App extends Component {
   
   render() {
     return (
-      <div>
-        < FeedbackOptions feedbackHandler={this.handleClickIncrement} />
-        {this.state.good || this.state.neutral || this.state.bad ? (
-          <Statistics data={this.state} />
-        ) : (
-          <p>There is no feedback</p>
-        )}
-      </div>
+      <Section data={ this.state} feedbackHandler ={this.handleClickIncrement} />
     )
   };
 };

@@ -1,4 +1,6 @@
-const FeedbackOptions = ({feedbackHandler}) => {
+import PropTypes from 'prop-types';
+
+const FeedbackOptions = ({ feedbackHandler }) => {
     return (
     <div>
         <h1>Please leave feedback</h1>
@@ -9,4 +11,7 @@ const FeedbackOptions = ({feedbackHandler}) => {
     )
 };
 
+FeedbackOptions.propTypes = {
+    feedbackHandler: PropTypes.func.isRequired
+}
 export default FeedbackOptions;
