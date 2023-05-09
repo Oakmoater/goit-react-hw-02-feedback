@@ -12,11 +12,9 @@ export class App extends Component {
 
   handleClickIncrement = (e) => {
     const { name } = e.target;
-    this.setState(prevState => {
-      const updatedState = { ...prevState, [name]: prevState[name] + 1 };
-      updatedState.total += 1;
-    return updatedState;
-    });
+    this.setState((prevState) => ({
+      [name]: prevState[name] + 1,
+    }));
   };
 
   calculateStatistics = () => {
